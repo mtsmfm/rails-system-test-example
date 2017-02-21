@@ -1,0 +1,8 @@
+.git
+.gitignore
+tmp
+log
+Dockerfile
+docker-compose.yml
+public/assets
+vendor/bundle

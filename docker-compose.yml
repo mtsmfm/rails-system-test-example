@@ -1,0 +1,30 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      args:
+        - LOCAL_BUILD=true
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=postgres://postgres:@db
+      - PORT=3000
+      - HOST=0.0.0.0
+    tty: true
+    stdin_open: true
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+      - chrome
+
+  chrome:
+    image: selenium/standalone-chrome-debug
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - 5900:5900
+
+  db:
+    image: postgres:9.5.4
