@@ -1,12 +1,12 @@
 GIT
-  remote: git://github.com/rails/arel.git
-  revision: 208fe3690d840d0ee65b1395a891886e58fd3f4b
+  remote: https://github.com/rails/arel.git
+  revision: 668da2dfa951ea43f9b2c1171b225b10dba50a3a
   specs:
     arel (8.0.0)
 
 GIT
-  remote: git://github.com/rails/rails.git
-  revision: 5716c4ddf4e03c75bd50df901a515ac445167a99
+  remote: https://github.com/rails/rails.git
+  revision: 240e32bbbfb6943ac8d7f3fc4d6a6f685930d9ca
   specs:
     actioncable (5.1.0.alpha)
       actionpack (= 5.1.0.alpha)
@@ -67,12 +67,24 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
     builder (3.2.3)
+    capybara (2.12.1)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    childprocess (0.6.1)
+      ffi (~> 1.0, >= 1.0.11)
     concurrent-ruby (1.0.4)
     erubi (1.5.0)
+    ffi (1.9.17)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    i18n (0.8.0)
+    i18n (0.8.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -86,6 +98,9 @@ GEM
     nio4r (2.0.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.19.0)
+    public_suffix (2.0.5)
+    puma (3.7.1)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -95,6 +110,11 @@ GEM
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rake (12.0.0)
+    rubyzip (1.2.1)
+    selenium-webdriver (3.1.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -106,16 +126,23 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    websocket (1.2.4)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   arel!
+  capybara
+  pg
+  puma
   rails!
+  selenium-webdriver
 
 BUNDLED WITH
    1.14.4
