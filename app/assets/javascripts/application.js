@@ -11,3 +11,15 @@
 // about supported directives.
 //
 //= require_tree .
+
+setTimeout(function () {
+  var r = new XMLHttpRequest();
+  r.open('POST', '/posts', true);
+  var token = document.querySelector('meta[name="csrf-token"]');
+  if (token) {
+    r.setRequestHeader('X-CSRF-TOKEN', token.getAttribute('content'));
+  }
+  var formData = new FormData();
+  formData.append("post[title]", "a");
+  r.send(formData);
+}, 1);
