@@ -1,24 +1,14 @@
-# README
+# Rails System Test Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+- docker
+- docker-compose
 
-* Ruby version
+## Setup
 
-* System dependencies
+    docker-compose run web bin/setup
 
-* Configuration
+## Run test
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    docker-compose run web bin/rails test
