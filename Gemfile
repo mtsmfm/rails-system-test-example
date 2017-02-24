@@ -14,4 +14,5 @@ gem 'puma'
 group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'pry-byebug'
 end
