@@ -1,6 +1,7 @@
 GIT
-  remote: https://github.com/rails/rails.git
-  revision: d50380f4e3f9e8d9398c8fdcbe5f52f784d14f5f
+  remote: https://github.com/mtsmfm/rails.git
+  revision: 1a197e42f74950813be8a954bb7472e8fb6496e9
+  branch: fix-random-fail-on-system-test-with-ajax
   specs:
     actioncable (5.1.0.beta1)
       actionpack (= 5.1.0.beta1)
