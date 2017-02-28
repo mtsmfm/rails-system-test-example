@@ -8,7 +8,7 @@ class PostsTest < ApplicationSystemTestCase
     host! "http://#{IPSocket.getaddress(Socket.gethostname)}"
   end
 
-  10.times do |i|
+  1000.times do |i|
     test "visiting the index #{i}" do
       visit posts_url
 
