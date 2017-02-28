@@ -1,10 +1,4 @@
 GIT
-  remote: https://github.com/rails/arel.git
-  revision: 436db6d6e609305aca0d7b0a5b06b81a320a4320
-  specs:
-    arel (8.0.0)
-
-GIT
   remote: https://github.com/rails/rails.git
   revision: d50380f4e3f9e8d9398c8fdcbe5f52f784d14f5f
   specs:
@@ -69,6 +63,7 @@ GEM
   specs:
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    arel (8.0.0)
     builder (3.2.3)
     byebug (9.0.6)
     capybara (2.12.1)
@@ -147,7 +142,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  arel!
   capybara
   pg
   pry-byebug

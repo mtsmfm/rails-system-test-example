@@ -6,8 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', github: "rails/rails"
-gem 'arel', github: "rails/arel"
-
 gem 'pg'
 gem 'puma'
 
