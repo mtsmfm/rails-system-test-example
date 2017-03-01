@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mtsmfm/rails.git
-  revision: 1a197e42f74950813be8a954bb7472e8fb6496e9
+  revision: 5c501596321d5abede8f1e658ea71303c036ff6d
   branch: fix-random-fail-on-system-test-with-ajax
   specs:
     actioncable (5.1.0.beta1)
