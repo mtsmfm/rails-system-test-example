@@ -12,6 +12,8 @@ class PostsTest < ApplicationSystemTestCase
     test "visiting the index #{i}" do
       visit posts_url
 
+      Post.create!
+
       assert_selector "h1", text: "Post"
 
       visit posts_url
