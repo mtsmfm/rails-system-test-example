@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mtsmfm/rails.git
-  revision: c4e49bf93ac6f1bf84d8da773bafda94ebb59a81
+  revision: f267bd9756924f3e16564f56806e95dfd80e27dd
   branch: fix-random-fail-on-system-test-with-ajax
   specs:
     actioncable (5.1.0.beta1)
@@ -116,7 +116,7 @@ GEM
       loofah (~> 2.0)
     rake (12.0.0)
     rubyzip (1.2.1)
-    selenium-webdriver (3.2.1)
+    selenium-webdriver (3.2.2)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
