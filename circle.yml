@@ -26,4 +26,4 @@ database:
 
 test:
   override:
-    - docker-compose run web bin/rails test
+    - docker-compose run web bin/rails test:system
