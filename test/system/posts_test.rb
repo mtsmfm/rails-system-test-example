@@ -2,8 +2,6 @@ require "application_system_test_case"
 require "socket"
 
 class PostsTest < ApplicationSystemTestCase
-  driven_by :docker_chrome
-
   def setup
     host! "http://#{IPSocket.getaddress(Socket.gethostname)}"
   end

@@ -1,6 +1,7 @@
 GIT
-  remote: https://github.com/rails/rails.git
-  revision: 25e4b15b1bb486aae727c2079f82d30c743d0f50
+  remote: https://github.com/mtsmfm/rails.git
+  revision: 82dedcdac5275ce4408654e77e9576c1f2951658
+  branch: pass-options-to-driven-by
   specs:
     actioncable (5.1.0.beta1)
       actionpack (= 5.1.0.beta1)

@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', github: "rails/rails"
+gem 'rails', github: "mtsmfm/rails", branch: "pass-options-to-driven-by"
 gem 'pg'
 gem 'puma'
 
