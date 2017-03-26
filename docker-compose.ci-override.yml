@@ -2,3 +2,7 @@ version: '2'
 services:
   web:
     image: rails-system-test-example
+  chrome:
+    build:
+      context: .
+      dockerfile: Dockerfile-chrome-ci
