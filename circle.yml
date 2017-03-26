@@ -1,29 +1,38 @@
-machine:
-  pre:
-    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
-
-  services:
-    - docker
-
-dependencies:
-  override:
-    - sudo curl -L https://github.com/docker/compose/releases/download/1.11.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-    - sudo chmod +x /usr/local/bin/docker-compose
-    - |
-      sh -c '
-      cat docker-compose.yml | ruby -e "$(cat <<EOS
-        require "yaml"
-        y = YAML.load(STDIN.read)
-        y["services"]["web"]["build"].delete("args")
-        y["services"]["web"].delete("volumes")
-        puts y.to_yaml
-      EOS
-      )" > docker-compose.yml
-      '
-database:
-  override:
-    - docker-compose run web bin/setup
-
-test:
-  override:
-    - docker-compose run web bin/rails test:system
+version: 2
+jobs:
+  build:
+    docker:
+      - image: buildpack-deps:jessie
+    working_directory: ~/my-project
+    steps:
+      - checkout
+      - run:
+          name: Install docker
+          command: |
+            set -x
+            VERSION="17.03.0-ce"
+            curl -L -o /tmp/docker-$VERSION.tgz https://get.docker.com/builds/Linux/x86_64/docker-$VERSION.tgz
+            tar -xz -C /tmp -f /tmp/docker-$VERSION.tgz
+            mv /tmp/docker/* /usr/bin
+      - run:
+          name: Install docker-compose
+          command: |
+            set -x
+            curl -L "https://github.com/docker/compose/releases/download/1.11.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+            chmod +x  /usr/bin/docker-compose
+      - setup-docker-engine:
+          reusable: true
+          exclusive: true
+      - run:
+          name: Setup
+          command: |
+            set -x
+            mv docker-compose.ci-override.yml docker-compose.override.yml
+            docker-compose down -v
+            docker build . -t rails-system-test-example
+            docker-compose run web bin/setup
+      - run:
+          name: Test
+          command: |
+            set -x
+            docker-compose run web bin/rails test:system

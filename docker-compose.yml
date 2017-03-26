@@ -1,12 +1,6 @@
 version: '2'
 services:
   web:
-    build:
-      context: .
-      args:
-        - LOCAL_BUILD=true
-    volumes:
-      - .:/app
     environment:
       - DATABASE_URL=postgres://postgres:@db
       - PORT=3000
