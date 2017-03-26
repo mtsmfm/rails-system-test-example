@@ -7,3 +7,7 @@ services:
         - LOCAL_BUILD=true
     volumes:
       - .:/app
+  chrome:
+    image: selenium/standalone-chrome-debug
+    volumes:
+      - ./test/fixtures/files:/app/test/fixtures/files
