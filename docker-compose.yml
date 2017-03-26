@@ -17,6 +17,7 @@ services:
     image: selenium/standalone-chrome-debug
     volumes:
       - /dev/shm:/dev/shm
+      - ./test/fixtures/files:/app/test/fixtures/files
     ports:
       - 5900:5900
 

@@ -2,7 +2,9 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @post.title %>
+  <% if @post.file? %>
+    <%= image_tag image_path(@post.id) %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
