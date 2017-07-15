@@ -14,7 +14,11 @@ services:
       - chrome
 
   chrome:
-    image: selenium/standalone-chrome-debug
+    build:
+      context: .
+      dockerfile: Dockerfile.chrome
+    cap_add:
+      - SYS_ADMIN
     volumes:
       - /dev/shm:/dev/shm
     ports:

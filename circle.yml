@@ -29,8 +29,12 @@ jobs:
             docker-compose down -v
             docker build . -t rails-system-test-example
             docker-compose run web bin/setup
+            docker-compose up -d chrome
+            sleep 10
       - run:
           name: Test
           command: |
             set -x
-            docker-compose run web bin/rails test:system
+            docker-compose run -e BROWSER=headless-chrome web bin/rails test:system
+            docker-compose run -e BROWSER=chrome web bin/rails test:system
+            docker-compose run -e BROWSER=phantomjs web bin/rails test:system

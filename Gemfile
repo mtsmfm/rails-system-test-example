@@ -13,4 +13,5 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'pry-byebug'
+  gem 'poltergeist'
 end
