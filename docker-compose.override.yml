@@ -6,4 +6,7 @@ services:
       args:
         - LOCAL_BUILD=true
     volumes:
-      - .:/app
+      - mtsmfm-rails-system-test-example-sync:/app
+volumes:
+  mtsmfm-rails-system-test-example-sync:
+    external: true

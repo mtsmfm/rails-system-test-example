@@ -4,9 +4,11 @@
 
 - docker
 - docker-compose
+- docker-sync
 
 ## Setup
 
+    docker-sync start
     docker-compose run web bin/setup
 
 ## Run test

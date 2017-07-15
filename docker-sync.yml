@@ -1,0 +1,7 @@
+version: '2'
+options:
+  verbose: true
+syncs:
+  mtsmfm-rails-system-test-example-sync:
+    src: .
+    sync_userid: 1000
