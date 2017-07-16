@@ -3,6 +3,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" >> /etc
   && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
   && apt-get update -qq \
   && apt-get install -y less postgresql-client-9.5
+RUN yarn global add phantomjs-prebuilt
 
 ARG APP_DIR=/app
 ARG APP_USER=app

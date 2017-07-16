@@ -52,6 +52,7 @@ GEM
       xpath (~> 2.0)
     childprocess (0.6.3)
       ffi (~> 1.0, >= 1.0.11)
+    cliver (0.3.2)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
     erubi (1.6.1)
@@ -73,6 +74,10 @@ GEM
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     pg (0.20.0)
+    poltergeist (1.15.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      websocket-driver (>= 0.2.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -139,6 +144,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   pg
+  poltergeist
   pry-byebug
   puma
   rails (~> 5.1.0)
